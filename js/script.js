@@ -4,8 +4,8 @@ rows = 16;
 
 //select the container div
 const container = document.querySelector("#container");
-container.style.gridTemplateColumns = 'repeat(16, 1fr)';
-container.style.gridTemplateRows = 'repeat(16, 1fr)';
+container.style.gridTemplateColumns = `repeat(${columns}, 1fr)`;
+container.style.gridTemplateRows = `repeat(${rows}, 1fr)`;
 
 function createGrid(columns, rows) {
     for (let i=0; i< columns * rows; i++) {
