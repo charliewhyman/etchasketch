@@ -1,7 +1,7 @@
 //define a function to get a user input for grid size, then generate a new grid
 function clearGrid() {
     do{
-        var gridSize = parseInt(window.prompt("Please enter a number from 1 to 100", ""), 10);
+        var gridSize = parseInt(window.prompt("Please enter a number from 1 to 100", ""), 16);
     }while(isNaN(gridSize) || gridSize > 100 || gridSize < 1);
     let setColumns = gridSize;
     let setRows = gridSize;
