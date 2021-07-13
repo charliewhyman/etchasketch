@@ -1,6 +1,8 @@
-//define a function to clear the grid
+//define a function to get a user input for grid size, then generate a new grid
 function clearGrid() {
-    let gridSize = prompt("Enter grid size");
+    do{
+        var gridSize = parseInt(window.prompt("Please enter a number from 1 to 100", ""), 10);
+    }while(isNaN(gridSize) || gridSize > 100 || gridSize < 1);
     let setColumns = gridSize;
     let setRows = gridSize;
     createGrid(setColumns, setRows);
@@ -23,25 +25,28 @@ function createGrid(columns, rows) {
         squareDiv.textContent = '';
         container.appendChild(squareDiv);
         
+        //reset the grid color when creating a new grid
         var x = document.getElementsByClassName("squareDiv");
         var j; 
             for(j=0;j<x.length;j++) {
             x[j].style.backgroundColor = 'white'; 
             }
     }
-}
 
-//add event listeners to all squareDiv elements
-allDivs = document.querySelectorAll('.squareDiv');
+    //add event listeners to all squareDiv elements
+    allDivs = document.querySelectorAll('.squareDiv');
 
-// we use the .forEach method to iterate through each button
-allDivs.forEach((div) => {
+    // we use the .forEach method to iterate through each button
+    allDivs.forEach((div) => {
 
-  // and for each one we add a 'click' listener
-  div.addEventListener('mouseover', () => {
-      div.style.backgroundColor = 'coral';
+    // and for each one we add a 'click' listener
+    div.addEventListener('mouseover', () => {
+    div.style.backgroundColor = 'coral';
   });
 });
+}
+
+
 
 
 
