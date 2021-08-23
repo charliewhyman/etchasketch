@@ -1,5 +1,7 @@
 #container {
     display: grid;
+    margin: 1em;
+    border: 1px solid;
   }
 
   .squareDiv {

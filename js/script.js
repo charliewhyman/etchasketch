@@ -14,7 +14,7 @@ clearGrid();
 function createGrid(columns, rows) {
 
     //select the container div
-    const container = document.querySelector('.container');
+    const container = document.querySelector('#container');
     container.style.gridTemplateColumns = `repeat(${columns}, 1fr)`;
     container.style.gridTemplateRows = `repeat(${rows}, 1fr)`;
     for (let i=0; i< columns * rows; i++) {
@@ -22,7 +22,8 @@ function createGrid(columns, rows) {
         let id = i+1;
         squareDiv.id = 'box' + id;
         squareDiv.className = 'squareDiv';
-        squareDiv.textContent = '';
+        squareDiv.textContent = 'x';
+        squareDiv.style.color = 'transparent';
         container.appendChild(squareDiv);
         
         //reset the grid color when creating a new grid
